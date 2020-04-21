@@ -1,0 +1,14 @@
+apply plugin: 'maven'
+
+uploadArchives {
+    repositories.mavenDeployer {
+        snapshotRepository(url: "http://nexus.xiaoheiban.cn/repository/component-snapshots/") {
+            authentication(userName: "develop", password: "xhb123")
+        }
+        pom.name = "xhb-scancode"
+        pom.groupId = "com.xhb.plugin"
+        pom.artifactId = "scancode"
+        pom.version = "1.0.4-SNAPSHOT"
+        pom.packaging = 'aar'
+    }
+}
